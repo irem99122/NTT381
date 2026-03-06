@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Employee Dashboard</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Segoe UI,Arial;
+color:white;
+
+background-image:url("https://i.ibb.co/3yWfT4vw/bg5.avif");
+background-size:cover;
+background-position:center;
+height:100vh;
+}
+
+.overlay{
+background:rgba(10,15,30,0.70);
+backdrop-filter:blur(6px);
+min-height:100vh;
+padding:40px;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+}
+
+.profile-section{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.profile-section img{
+width:75px;
+height:75px;
+border-radius:50%;
+border:3px solid white;
+object-fit:cover;
+}
+
+.employee-info h2{
+margin:0;
+font-weight:600;
+}
+
+.employee-info p{
+margin:2px 0;
+font-size:14px;
+opacity:.85;
+}
+
+/* LOGO */
+
+.logo img{
+height:60px;
+opacity:.9;
+}
+
+/* CLOCK */
+
+.clock{
+text-align:right;
+}
+
+.clock h1{
+margin:0;
+font-size:32px;
+font-weight:600;
+}
+
+.clock p{
+margin:0;
+opacity:.8;
+}
+
+/* APPS */
+
+.apps-container{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:22px;
+}
+
+/* APP CARD */
+
+.app{
+background:rgba(255,255,255,0.10);
+border-radius:14px;
+padding:22px 10px;
+text-align:center;
+transition:.25s;
+cursor:pointer;
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.15);
+}
+
+.app:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.25);
+}
+
+.app img{
+height:44px;
+margin-bottom:10px;
+}
+
+.app p{
+margin:0;
+font-size:14px;
+font-weight:500;
+}
+
+/* FOOTER */
+
+.footer{
+position:absolute;
+bottom:15px;
+left:40px;
+font-size:13px;
+opacity:.6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+
+<div class="profile-section">
+
+<img src="https://i.ibb.co/bRPQfrtQ/Squared-Passport-Size-Photo.png">
+
+<div class="employee-info">
+
+<h2 id="greeting"></h2>
+
+<p>Portal ID : 10341381</p>
+
+<p>Email : 10341381@global.nttdata.com</p>
+
+</div>
+
+</div>
+
+
+<div class="logo">
+
+<img src="https://i.ibb.co/5bz8jZr/png.png">
+
+</div>
+
+
+<div class="clock">
+
+<h1 id="time"></h1>
+
+<p id="date"></p>
+
+</div>
+
+</header>
+
+
+
+<div class="apps-container" id="appsContainer"></div>
+
+<div class="footer">
+
+Startup Dashboard
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* CLOCK */
+
+function updateClock(){
+
+let now=new Date()
+
+document.getElementById("time").innerText=
+now.toLocaleTimeString()
+
+document.getElementById("date").innerText=
+now.toDateString()
+
+}
+
+setInterval(updateClock,1000)
+
+updateClock()
+
+
+
+/* GREETING */
+
+function greeting(){
+
+let hour=new Date().getHours()
+
+let text="Hello"
+
+if(hour<12) text="Good Morning"
+else if(hour<18) text="Good Afternoon"
+else text="Good Evening"
+
+document.getElementById("greeting").innerText=
+text+" Amudha Ekambaram"
+
+}
+
+greeting()
+
+
+
+/* LOAD APPS */
+
+fetch("apps.json")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+let container=document.getElementById("appsContainer")
+
+data.apps.forEach(app=>{
+
+let div=document.createElement("div")
+
+div.className="app"
+
+div.onclick=()=>window.open(app.link,"_blank")
+
+div.innerHTML=`
+
+<img src="${app.logo}">
+<p>${app.name}</p>
+
+`
+
+container.appendChild(div)
+
+})
+
+})
+
+</script>
+
+</body>
+</html>
