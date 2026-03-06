@@ -1,0 +1,35 @@
+{
+ "apps":[
+
+  {
+   "name":"Outlook",
+   "link":"https://outlook.office.com",
+   "logo":"https://iili.io/outlook.png"
+  },
+
+  {
+   "name":"Teams",
+   "link":"https://teams.microsoft.com",
+   "logo":"https://iili.io/teams.png"
+  },
+
+  {
+   "name":"Timesheet",
+   "link":"https://timesheet.company.com",
+   "logo":"https://iili.io/time.png"
+  },
+
+  {
+   "name":"Navigator",
+   "link":"https://navigator.company.com",
+   "logo":"https://iili.io/nav.png"
+  },
+
+  {
+   "name":"Miro Board",
+   "link":"https://miro.com/app/board/",
+   "logo":"https://iili.io/miro.png"
+  }
+
+ ]
+}
