@@ -136,6 +136,40 @@ font-size:13px;
 opacity:.6;
 }
 
+  .search-bar{
+margin:20px 0 35px 0;
+text-align:center;
+}
+
+.search-bar input{
+
+width:420px;
+padding:12px;
+border-radius:8px;
+border:none;
+font-size:15px;
+outline:none;
+
+}
+
+.search-bar button{
+
+padding:12px 18px;
+border:none;
+border-radius:8px;
+margin-left:8px;
+background:#0078D4;
+color:white;
+cursor:pointer;
+
+}
+
+.search-bar button:hover{
+
+background:#005fa3;
+
+}
+
 </style>
 
 </head>
@@ -181,6 +215,21 @@ opacity:.6;
 </header>
 
 
+<div class="search-bar">
+
+<form action="https://www.google.com/search" method="GET" target="_blank">
+
+<input 
+type="text" 
+name="q" 
+placeholder="Search Google..."
+required>
+
+<button type="submit">Search</button>
+
+</form>
+
+</div>
 
 <div class="apps-container" id="appsContainer"></div>
 
@@ -271,4 +320,5 @@ container.appendChild(div)
 </script>
 
 </body>
+
 </html>
