@@ -3,32 +3,26 @@
 
   {
    "name":"Outlook",
-   "link":"https://outlook.office.com",
-   "logo":"https://iili.io/outlook.png"
+   "link":"https://outlook.office.com/",
+   "logo":"https://en.wikipedia.org/wiki/Outlook.com"
   },
 
   {
    "name":"Teams",
-   "link":"https://teams.microsoft.com",
-   "logo":"https://iili.io/teams.png"
+   "link":"https://teams.microsoft.com/v2/",
+   "logo":"https://commons.wikimedia.org/wiki/File:Microsoft_Office_Teams_%282025%E2%80%93present%29.svg"
   },
 
   {
    "name":"Timesheet",
-   "link":"https://timesheet.company.com",
-   "logo":"https://iili.io/time.png"
+   "link":"https://sapfip.portal.nttdatainc.com/fiori?sap-language=EN#zhcmtime-manage",
+   "logo":"https://www.flaticon.com/free-icon/time-sheet_5246293"
   },
 
   {
-   "name":"Navigator",
-   "link":"https://navigator.company.com",
-   "logo":"https://iili.io/nav.png"
-  },
-
-  {
-   "name":"Miro Board",
-   "link":"https://miro.com/app/board/",
-   "logo":"https://iili.io/miro.png"
+   "name":"Miro MetLife Plan",
+   "link":"https://miro.com/app/board/uXjVLkeqDMI=/",
+   "logo":"https://brandfetch.com/miro.com"
   }
 
  ]
